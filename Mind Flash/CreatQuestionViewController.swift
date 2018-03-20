@@ -10,6 +10,26 @@ import UIKit
 
 class CreatQuestionViewController: UIViewController {
 
+    @IBOutlet weak var addButton: UIButton!
+    
+    
+    @IBOutlet weak var cancelButton: UIButton!
+    
+    
+    @IBOutlet weak var questionTextField: UITextField!
+    
+    @IBOutlet weak var answerATextField: UITextField!
+    
+    @IBOutlet weak var answerBTextField: UITextField!
+    
+    @IBOutlet weak var answerCtextField: UITextField!
+    
+    @IBOutlet weak var answerDTextField: UITextField!
+    
+    @IBOutlet weak var correctAnswerController: UISegmentedControl!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -27,4 +47,6 @@ class CreatQuestionViewController: UIViewController {
     self.dismiss(animated: true)
     }
     
+    @IBAction func addButtonTapped(_ sender: Any) {
+    }
 }

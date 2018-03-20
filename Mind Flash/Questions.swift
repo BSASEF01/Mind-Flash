@@ -11,18 +11,15 @@ import Foundation
 class Question {
     
     var question: String
-    var opitinA: String
-    var opitinB: String
-    var opitinC: String
-    var opitinD: String
+    var answer: [String]
+    var correctanswer: Int
     
-    init(question:String, choicA:String, choicB:String, choicC:String, choicD:String) {
+    init(question:String, answer:[String], correctanswer:Int) {
         self.question  = question
-        self.opitinA = choicA
-        self.opitinB = choicB
-        self.opitinC = choicC
-        self.opitinD = choicD
-    
+        self.answer = answer
+        self.correctanswer = correctanswer
+        
+        
     
     }
     
