@@ -10,12 +10,12 @@ import Foundation
 
 class Question {
     
-    var question: String
+    var questionText: String
     var answer: [String]
     var correctanswer: Int
     
-    init(question:String, answer:[String], correctanswer:Int) {
-        self.question  = question
+    init(questionText:String, answer:[String], correctanswer:Int) {
+        self.questionText  = questionText
         self.answer = answer
         self.correctanswer = correctanswer
         

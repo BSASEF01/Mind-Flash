@@ -124,6 +124,10 @@
                     </view>
                     <connections>
                         <outlet property="addQuestionButton" destination="coI-ph-da6" id="ttF-U3-k2D"/>
+                        <outlet property="button1" destination="Qfc-pl-VpQ" id="ped-wU-qFz"/>
+                        <outlet property="button2" destination="QhE-4R-BiT" id="1hr-cx-cC0"/>
+                        <outlet property="button3" destination="5ui-jV-004" id="xuO-nz-Jvu"/>
+                        <outlet property="button4" destination="Em6-qB-Y86" id="gmW-Kc-mHK"/>
                         <outlet property="questionLabel" destination="7Xd-cz-des" id="DJB-Qk-gEf"/>
                         <outlet property="scoreLabel" destination="6zz-fa-Qwm" id="BVs-Rd-IhC"/>
                     </connections>
@@ -160,13 +164,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="what is the questions ?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LHy-qS-6dU">
-                                <rect key="frame" x="37" y="147" width="357" height="30"/>
+                                <rect key="frame" x="37" y="178" width="357" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Answer A" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="X25-EW-bwy">
                                 <rect key="frame" x="37" y="274" width="357" height="30"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
