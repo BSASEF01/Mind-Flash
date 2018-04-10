@@ -28,11 +28,11 @@ class CreatQuestionViewController: UIViewController {
     
     @IBOutlet weak var correctAnswerController: UISegmentedControl!
     
-    
+    var newQuestion: Question!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+  
         
     }
 
@@ -48,5 +48,16 @@ class CreatQuestionViewController: UIViewController {
     }
     
     @IBAction func addButtonTapped(_ sender: Any) {
+   
+        newQuestion =  Question(questionText: questionTextField.text!, answer: [answerATextField.text!,answerBTextField.text!,answerDTextField.text!,answerDTextField.text!], correctanswer: correctAnswerController.selectedSegmentIndex)
+    
     }
-}
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "userScreen") {
+            let vc = segue.destination as! GuessviewControlerViewController
+            vc.questionArray.append(newQuestion)
+        }
+    }
+        
+    }
+

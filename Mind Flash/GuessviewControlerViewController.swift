@@ -11,13 +11,9 @@ import UIKit
 class GuessviewControlerViewController: UIViewController {
 
     @IBOutlet weak var scoreLabel: UILabel!
-    
     @IBOutlet weak var addQuestionButton: UIButton!
-    
     @IBOutlet weak var questionLabel: UILabel!
-    
     @IBOutlet weak var resetButtonTapped: UIButton!
-    
     
     @IBOutlet weak var button1: UIButton!
     @IBOutlet weak var button2: UIButton!
@@ -26,8 +22,12 @@ class GuessviewControlerViewController: UIViewController {
     
     
     var questionArray = [Question]()
-    var colors = [#colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 1),#colorLiteral(red: 0.9098039269, green: 0.4784313738, blue: 0.6431372762, alpha: 1),#colorLiteral(red: 0.5843137503, green: 0.8235294223, blue: 0.4196078479, alpha: 1),#colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1)]
-     var score = 0
+    var askedQuestions = [Question]()
+    var colors = [#colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1),#colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1),#colorLiteral(red: 0.9098039269, green: 0.4784313738, blue: 0.6431372762, alpha: 1),#colorLiteral(red: 0.719715476, green: 1, blue: 0.6779413223, alpha: 1)]
+    
+    var score = 0
+    
+    var disPlayedQuestion: Question?
    
     
     override func viewDidLoad() {
@@ -81,42 +81,77 @@ class GuessviewControlerViewController: UIViewController {
    
     func generateAnswerButtons(questions: Question, colorselection:[UIColor]) {
         var colorArray = colorselection
+        var questionAnswers =  questions.answer
         for i in 0...3 {
-            var randomAnswer = Int(arc4random_uniform(UInt32(questions.answer.count)))
-            let randomColor = Int(arc4random_uniform(UInt32(colorselection.count)))
+            var randomAnswer = Int(arc4random_uniform(UInt32(questionAnswers.count)))
+            let randomColor = Int(arc4random_uniform(UInt32(colorArray.count)))
             
             
             switch i {
             case 0 :
-                button1.setTitle(questions.answer[randomAnswer], for: .normal)
-                button1.backgroundColor = colorselection[randomColor]
+                button1.setTitle(questionAnswers[randomAnswer], for: .normal)
+                button1.backgroundColor = colorArray[randomColor]
             case 1:
-                button2.setTitle(questions.answer[randomAnswer], for: .normal)
-                button2.backgroundColor = colorselection[randomColor]
+                button2.setTitle(questionAnswers[randomAnswer], for: .normal)
+                button2.backgroundColor = colorArray[randomColor]
             case 2:
-                button3.setTitle(questions.answer[randomAnswer], for: .normal)
-                button3.backgroundColor = colorselection[randomColor]
+                button3.setTitle(questionAnswers[randomAnswer], for: .normal)
+                button3.backgroundColor = colorArray[randomColor]
             case 3:
-                button4.setTitle(questions.answer[randomAnswer], for: .normal)
-                button4.backgroundColor = colorselection[randomColor]
+                button4.setTitle(questionAnswers[randomAnswer], for: .normal)
+                button4.backgroundColor = colorArray[randomColor]
             default:
                 return
             }
-            questions.answer.remove(at: randomAnswer)
+            questionAnswers.remove(at: randomAnswer)
             colorArray.remove(at: randomColor)
+            
         }
     }
     
     func generateQuestionText() {
+          scoreLabel.text = "score:\(score)"
         let randomQuestionIndex = Int(arc4random_uniform(UInt32(questionArray.count)))
         var currentQuestion = questionArray[randomQuestionIndex]
+        askedQuestions.append(currentQuestion)
         questionLabel.text = currentQuestion.questionText
+        questionArray.remove(at:randomQuestionIndex)
+        disPlayedQuestion = currentQuestion
         generateAnswerButtons(questions: currentQuestion, colorselection: colors)
+    
+    }
+    
+    func gameOver() {
         
+        let alertView = UIAlertController(title: "Correct!", message: "You got the answer right, good job" , preferredStyle: .alert)
         
+        let okAction = UIAlertAction( title: "Okey!", style: .default, handler: {action in
+            self.questionArray = self.askedQuestions
+            self.askedQuestions = []
+            self.generateQuestionText()
+        })
+        alertView.addAction(okAction)
+        
+        self.present(alertView, animated: true, completion: nil)
+        score = 0 
     }
     
     @IBAction func resetButtonTapped(_ sender: Any) {
+       let alertView = UIAlertController(title: "Resat!", message: "Are you sure ypu want resat the game?", preferredStyle: .alert)
+        let yesAction = UIAlertAction(title: "Yes!", style: .default, handler: {action in
+            
+            self.questionArray = self.askedQuestions
+            self.score = 0
+            self.askedQuestions = []
+            self.generateQuestionText()
+            
+        })
+    let noAction = UIAlertAction(title: "No", style: .default, handler: {action in
+        self.dismiss(animated: true, completion: nil)
+    })
+     alertView.addAction(yesAction)
+        alertView.addAction(noAction)
+    
     }
     
     
@@ -124,13 +159,39 @@ class GuessviewControlerViewController: UIViewController {
         
         let button = sender as! UIButton
         print(button.tag)
+        if button.titleLabel?.text == disPlayedQuestion!.answer[(disPlayedQuestion!.correctanswer)] {
+    let alertView = UIAlertController(title: "Correct!", message: "You got the answer right, good job" , preferredStyle: .alert)
+           score += 1
+            alertView.addAction(UIAlertAction(title:"okey!",style:.default))
+            let okAction = UIAlertAction( title: "Okey!", style: .default, handler: {action in
+            if self .questionArray.count != 0 {
+                self.generateQuestionText()
+            }else{
+                self.gameOver()
+            }
+          })
+                self.present(alertView,animated: true, completion: nil)
+        } else {
+            let alertView2 = UIAlertController(title: "wrong!", message: "you miss it!", preferredStyle: .alert)
         
-    }
+            let okAction = UIAlertAction( title: "Okey!", style: .default, handler: {action in
+                if self .questionArray.count != 0 {
+                    self.generateQuestionText()
+                }else{
+                    self.gameOver()
+                }
+            })
+            alertView2.addAction(okAction)
+        self.present(alertView2,animated: true, completion: nil)
+  
+        }
+ 
+
 }
 
 
 
-
+}
 
 
 

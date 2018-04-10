@@ -81,7 +81,7 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qfc-pl-VpQ">
                                         <rect key="frame" x="0.0" y="0.0" width="406" height="59.666666666666664"/>
-                                        <color key="backgroundColor" red="0.0" green="0.99143940210000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Button"/>
                                         <connections>
                                             <action selector="answerButoonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eSP-Xf-CpY"/>
@@ -89,7 +89,7 @@
                                     </button>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QhE-4R-BiT">
                                         <rect key="frame" x="0.0" y="59.666666666666629" width="406" height="60"/>
-                                        <color key="backgroundColor" red="1" green="0.63362624720000005" blue="0.74992971239999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Button"/>
                                         <connections>
                                             <action selector="answerButoonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jVe-tJ-fg0"/>
@@ -97,7 +97,7 @@
                                     </button>
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ui-jV-004">
                                         <rect key="frame" x="0.0" y="119.66666666666664" width="406" height="59.666666666666671"/>
-                                        <color key="backgroundColor" red="0.78144668620000002" green="1" blue="0.70963872760000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Button"/>
                                         <connections>
                                             <action selector="answerButoonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1xh-iQ-K6Y"/>
@@ -105,7 +105,7 @@
                                     </button>
                                     <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Em6-qB-Y86">
                                         <rect key="frame" x="0.0" y="179.33333333333337" width="406" height="59.666666666666657"/>
-                                        <color key="backgroundColor" red="0.5820228006" green="0.72843440699999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Button"/>
                                         <connections>
                                             <action selector="answerButoonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bcA-3M-vYe"/>
@@ -142,8 +142,7 @@
                         <outlet property="button3" destination="5ui-jV-004" id="xuO-nz-Jvu"/>
                         <outlet property="button4" destination="Em6-qB-Y86" id="gmW-Kc-mHK"/>
                         <outlet property="questionLabel" destination="7Xd-cz-des" id="DJB-Qk-gEf"/>
-                        <outlet property="resetButton" destination="pfs-vo-SJA" id="vdO-vR-Qfm"/>
-                        <outlet property="resetButtonTapped" destination="pfs-vo-SJA" id="nIi-Ws-IcS"/>
+                        <outlet property="resetButtonTapped" destination="pfs-vo-SJA" id="gr5-ZT-taG"/>
                         <outlet property="scoreLabel" destination="6zz-fa-Qwm" id="BVs-Rd-IhC"/>
                     </connections>
                 </viewController>
@@ -220,6 +219,7 @@
                                 <state key="normal" title="Add"/>
                                 <connections>
                                     <action selector="addButtonTapped:" destination="7I0-4c-VA2" eventType="touchUpInside" id="uoc-oD-04u"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="userScreen" id="GJT-gg-jO5"/>
                                 </connections>
                             </button>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="oQ8-aH-E7a">
