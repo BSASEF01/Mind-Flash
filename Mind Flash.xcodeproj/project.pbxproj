@@ -8,22 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		270AE61020602C7300D6DA5B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270AE60F20602C7300D6DA5B /* AppDelegate.swift */; };
-		270AE61220602C7300D6DA5B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270AE61120602C7300D6DA5B /* ViewController.swift */; };
 		270AE61520602C7300D6DA5B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 270AE61320602C7300D6DA5B /* Main.storyboard */; };
 		270AE61820602C7300D6DA5B /* Mind_Flash.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 270AE61620602C7300D6DA5B /* Mind_Flash.xcdatamodeld */; };
 		270AE61A20602C7300D6DA5B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 270AE61920602C7300D6DA5B /* Assets.xcassets */; };
 		270AE61D20602C7300D6DA5B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 270AE61B20602C7300D6DA5B /* LaunchScreen.storyboard */; };
+		270AE625206032E400D6DA5B /* Questions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270AE624206032E400D6DA5B /* Questions.swift */; };
+		270AE6272060467F00D6DA5B /* GuessviewControlerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270AE6262060467F00D6DA5B /* GuessviewControlerViewController.swift */; };
+		270AE629206046BD00D6DA5B /* CreatQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270AE628206046BD00D6DA5B /* CreatQuestionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		270AE60C20602C7300D6DA5B /* Mind Flash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mind Flash.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		270AE60F20602C7300D6DA5B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		270AE61120602C7300D6DA5B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		270AE61420602C7300D6DA5B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		270AE61720602C7300D6DA5B /* Mind_Flash.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Mind_Flash.xcdatamodel; sourceTree = "<group>"; };
 		270AE61920602C7300D6DA5B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		270AE61C20602C7300D6DA5B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		270AE61E20602C7300D6DA5B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		270AE624206032E400D6DA5B /* Questions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Questions.swift; sourceTree = "<group>"; };
+		270AE6262060467F00D6DA5B /* GuessviewControlerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessviewControlerViewController.swift; sourceTree = "<group>"; };
+		270AE628206046BD00D6DA5B /* CreatQuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatQuestionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,7 +61,9 @@
 			isa = PBXGroup;
 			children = (
 				270AE60F20602C7300D6DA5B /* AppDelegate.swift */,
-				270AE61120602C7300D6DA5B /* ViewController.swift */,
+				270AE624206032E400D6DA5B /* Questions.swift */,
+				270AE6262060467F00D6DA5B /* GuessviewControlerViewController.swift */,
+				270AE628206046BD00D6DA5B /* CreatQuestionViewController.swift */,
 				270AE61320602C7300D6DA5B /* Main.storyboard */,
 				270AE61920602C7300D6DA5B /* Assets.xcassets */,
 				270AE61B20602C7300D6DA5B /* LaunchScreen.storyboard */,
@@ -140,7 +146,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				270AE61820602C7300D6DA5B /* Mind_Flash.xcdatamodeld in Sources */,
-				270AE61220602C7300D6DA5B /* ViewController.swift in Sources */,
+				270AE629206046BD00D6DA5B /* CreatQuestionViewController.swift in Sources */,
+				270AE625206032E400D6DA5B /* Questions.swift in Sources */,
+				270AE6272060467F00D6DA5B /* GuessviewControlerViewController.swift in Sources */,
 				270AE61020602C7300D6DA5B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
